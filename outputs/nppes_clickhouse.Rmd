@@ -1,0 +1,28 @@
+---
+title: "NPPES Clickhouse Example"
+author: "Andrew Bruce"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+library(ClickHouseHTTP)
+library(RClickhouse)
+library(DBI)
+```
+
+
+
+```{r}
+con <- DBI::dbConnect(
+   ClickHouseHTTP::ClickHouseHTTP(), host = "localhost",
+   port = 8123
+)
+```
+
